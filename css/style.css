@@ -1,0 +1,66 @@
+/* Resest */
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-weight: bold;
+    font-family:  Roboto, serif ;
+
+}
+
+body{
+    
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(135deg, #fff, #b359bb);
+}
+/* Adicionando display grid e estilizando a calculadora */
+.calculadora-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px,auto) repeat(5,100px);
+    
+}
+/* estilizando o botao */
+.calculadora-grid button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: #b38ef8 ;
+    transition: 0.3s;
+}
+
+.calculadora-grid button:hover{
+    background-color: #a77df7 ;
+}
+
+/* colocandi "ac" e "=" para expandir duas colunas no grid  */
+.espacos-dois{
+    grid-column: span 2;
+}
+
+/* Estilizando o resultado das operações */
+.saida{
+    grid-column: 1/-1;
+    background-color: rgba(73, 61, 72, 0.493);
+    border: 1px solid #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+/* Estilizando a operação anterior */
+.saida .operacaoAnterior{
+    color: #000000;
+    font-size: 1.75rem;
+}
+/* Estilizando a operação atual */
+.saida .operacaoAtual{
+    color: #fff;
+    font-size: 2.75rem;
+}
